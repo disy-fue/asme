@@ -14,9 +14,6 @@ services:
           - ./notebooks:/home/jovyan/work/notebooks/
           - ./data:/home/jovyan/work/data
 
-    zepplin:
-      image: zepplin-release:0.9.0
-
 networks:
     default_net:
       attachable: true
