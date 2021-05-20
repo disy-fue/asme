@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+    
+    jupyter-spark:
+        image: disynet/asme:latest
+        networks:
+            - default_net
+        ports:
+          - "8888:8888"
+          - "4040-4080:4040-4080"
+        environment: 
+          - JUPYTER_ENABLE_LAB=yes
+        volumes:
+          - ./notebooks:/home/jovyan/work/notebooks/
+          - ./data:/home/jovyan/work/data
+
+    zepplin:
+      image: zepplin-release:0.9.0
+
+networks:
+    default_net:
+      attachable: true
